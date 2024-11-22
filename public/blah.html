@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Dishes - Foodie</title>
+</head>
+<style>
+    main{
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #fff8f0;
+    color: #333;
+}
+
+h1,h2{
+    text-align: center;
+}
+.cuisine {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+}
+
+
+.form-container {
+    background-color: #fff;
+    padding: 30px;
+    padding-right: 45px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+header {
+    background-color: rgba(52, 58, 64, 0.8); /* Dark gray with transparency */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.navbar .logo {
+    font-size: 1.8em;
+    color: white;
+    font-weight: bold;
+}
+
+.btn {
+    padding: 10px 15px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.btn.admin {
+    background-color: #17a2b8; /* Blue */
+    color: white;
+}
+
+
+.btn.admin:hover {
+    background-color: #138496; /* Darker blue */
+}
+
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 220px; /* Adjusts card size for four in a row */
+    flex: 1 1 calc(25% - 20px); /* Allows four cards per row */
+    text-align: center;
+    padding: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    background-color: #f04a4a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn.order {
+    background-color: #28a745;
+}
+
+.btn.add-to-cart {
+    background-color: #ffc107;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Optional: Adjust layout for smaller screens */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 20px); /* Two cards per row for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 100%; /* One card per row for small screens */
+    }
+}
+
+
+.btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.add-to-cart {
+    background-color: #007bff; /* Blue background for Add to Cart */
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+footer {
+    background-color: rgba(52, 58, 64, 0.8);
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+  color: #ccc;
+}
+.no-style {
+    color: inherit;
+    text-decoration: none;
+}
+
+.no-style:hover {
+    color: #555;
+    text-decoration: underline; 
+}
+.card img {
+    width: 220px; 
+    height: 180px;
+    border-radius: 10px;
+}
+
+
+</style>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Foodie</div>
+            <div class="login-buttons">
+                <button class="btn admin"><b><a href="home.html" class="no-style">X</a></b></button>
+            </div>
+        </nav>
+    </header>
+
+    
+        
+    
+    
+        <h1>Order Your Favorite Dishes</h1>
+        <h2>Indian Dishes</h2>
+        <section class="cuisine"> 
+            <div class="card-container" id="dishList">
+        
+                <div class="card">
+                    <img src="#" alt="">
+                    <h3>Butter Chicken</h3>
+                    <p>Price: ₹250</p>
+                    <p>Rating: ⭐⭐⭐⭐</p>
+                    <button class="btn order">Order</button>
+                    <button class="btn add-to-cart">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="#" alt="">
+                    <h3>Biryani</h3>
+                    <p>Price: ₹200</p>
+                    <p>Rating: ⭐⭐⭐⭐⭐</p>
+                    <button class="btn order">Order</button>
+                    <button class="btn add-to-cart">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="#" alt="">
+                    <h3>Paneer Tikka</h3>
+                    <p>Price: ₹180</p>
+                    <p>Rating: ⭐⭐⭐⭐</p>
+                    <button class="btn order">Order</button>
+                    <button class="btn add-to-cart">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="#" alt="">
+                    <h3>Masala Dosa</h3>
+                    <p>Price: ₹150</p>
+                    <p>Rating: ⭐⭐⭐⭐</p>
+                    <button class="btn order">Order</button>
+                    <button class="btn add-to-cart">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="#" alt="">
+                    <h3>Rogan Josh</h3>
+                    <p>Price: ₹300</p>
+                    <p>Rating: ⭐⭐⭐⭐⭐</p>
+                    <button class="btn order">Order</button>
+                    <button class="btn add-to-cart">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="#" alt="">
+                    <h3>Chole Bhature</h3>
+                    <p>Price: ₹120</p>
+                    <p>Rating: ⭐⭐⭐⭐</p>
+                    <button class="btn order">Order</button>
+                    <button class="btn add-to-cart">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="#" alt="">
+                    <h3>Palak Paneer</h3>
+                    <p>Price: ₹220</p>
+                    <p>Rating: ⭐⭐⭐⭐</p>
+                    <button class="btn order">Order</button>
+                    <button class="btn add-to-cart">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="#" alt="">
+                    <h3>Tandoori Chicken</h3>
+                    <p>Price: ₹270</p>
+                    <p>Rating: ⭐⭐⭐⭐⭐</p>
+                    <button class="btn order">Order</button>
+                    <button class="btn add-to-cart">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="#" alt="">
+                    <h3>Samosa</h3>
+                    <p>Price: ₹50</p>
+                    <p>Rating: ⭐⭐⭐⭐</p>
+                    <button class="btn order">Order</button>
+                    <button class="btn add-to-cart">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="#" alt="">
+                    <h3>Gulab Jamun</h3>
+                    <p>Price: ₹100</p>
+                    <p>Rating: ⭐⭐⭐⭐⭐</p>
+                    <button class="btn order">Order</button>
+                    <button class="btn add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        </section>
+  
+
+        <script>
+            document.getElementById('dishesContainer').appendChild(dishCard);
+
+            function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+    
+            const message = getQueryParam('message');
+            if (message) {
+                alert(message); 
+            }
+        </script>
+   
+</body>
+</html>
